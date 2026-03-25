@@ -24,6 +24,6 @@ for each_name in invite_list:
     # Replace each "[name]" string with the list of names and write each new_letter to a directory
     new_letter_content = starting_letter_content.replace("[name]", each_name)
     # print(new_letter_content)
-    new_letter_filename = each_name + "_invite.txt"
+    new_filename = each_name + "_invite.txt"
     # print(new_letter_filename)
-    # file_manager.write_to_file("Output/ReadyToSend", new_letter_content, )
+    file_manager.write_to_file("Output/ReadyToSend", new_filename, new_letter_content)

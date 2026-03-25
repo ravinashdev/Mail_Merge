@@ -17,11 +17,15 @@ class FileManager(Path):
         with open(full_path, 'r') as file:
             content = file.readlines()[0]
         return content
-    # Write file
+    # Write a new file in an existing directory and check if it already exists with a try except using mode x
     def write_to_file(self, relative_path, new_file_name, content):
         full_path = self.absolute_path + "/" + relative_path + "/" + new_file_name
-        with open(full_path, 'w') as file:
-            file.write(content)
+        try:
+            with open(full_path, 'x') as file:
+                file.write(content)
+            print("File written")
+        except FileExistsError:
+            print("File already exists")
     # Append to file
     def append_to_file(self, relative_path, content):
         full_path = self.absolute_path + "/" + relative_path
