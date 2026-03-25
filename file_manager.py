@@ -12,10 +12,10 @@ class FileManager(Path):
             content = file.read()
         return content
     # Read first line
-    def read_first_line(self, relative_path):
+    def read_lines(self, relative_path):
         full_path = self.absolute_path + "/" + relative_path
         with open(full_path, 'r') as file:
-            content = file.readlines()[0]
+            content = file.readlines()
         return content
     # Write a new file in an existing directory and check if it already exists with a try except using mode x
     def write_to_file(self, relative_path, new_file_name, content):
