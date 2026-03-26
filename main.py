@@ -1,5 +1,7 @@
 # IMPORTS
 from file_manager import FileManager
+# CONSTANTS
+TO_REPLACE = "[name]"
 #TODO: Create a letter using starting_letter.txt
 #for each name in invited_names.txt
 #Replace the [name] placeholder with the actual name.
@@ -19,7 +21,7 @@ letter_template_content = file_manager.read_file(relative_path="Input/Letters/le
 
 for each_name in invite_list:
     # Replace each "[name]" string with the list of names and write each new_letter to a directory
-    new_letter_content = letter_template_content.replace("[name]", each_name)
+    new_letter_content = letter_template_content.replace(TO_REPLACE, each_name)
     # print(new_letter_content)
     new_filename = each_name + "_invite.txt"
     # print(new_letter_filename)
